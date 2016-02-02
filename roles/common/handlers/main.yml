@@ -11,4 +11,4 @@
   service: name=rsyslog state=restarted
 
 - name: restart iptables
-  service: name=iptables state=restarted
+  service: name=iptables state=stopped enabled=false

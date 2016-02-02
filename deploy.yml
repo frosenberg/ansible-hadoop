@@ -20,7 +20,7 @@
     - { role: nginx, when: with_ganglia }
     - { role: ganglia_metad, when: with_ganglia }
     - { role: ganglia_web, when: with_ganglia }
- 
+
 - hosts: elasticsearch
   roles:
     - { role: elasticsearch, when: with_elasticsearch }
@@ -71,3 +71,7 @@
 - hosts: sparkworkers
   roles:
     - spark_workers
+
+- hosts: zeppelin
+  roles:
+    - zeppelin

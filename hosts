@@ -2,42 +2,48 @@
 # ============
 
 [zookeepers]
-master.nflabs.com zookeeper_id=1
-master2.nflabs.com zookeeper_id=2
-pel.nflabs.com zookeeper_id=3
+frmaster.sl.cloud9.ibm.com zookeeper_id=1
+frmaster2.sl.cloud9.ibm.com zookeeper_id=2
+frdata.sl.cloud9.ibm.com zookeeper_id=3
+frdata2.sl.cloud9.ibm.com zookeeper_id=4
 
 # HADDOP DEPLOYMENT
 # =================
 
 [journalnodes]
-master.nflabs.com
-master2.nflabs.com
-pel.nflabs.com
+frmaster.sl.cloud9.ibm.com
+frmaster2.sl.cloud9.ibm.com
 
 [namenodes]
-master.nflabs.com
-master2.nflabs.com
+frmaster.sl.cloud9.ibm.com
+frmaster2.sl.cloud9.ibm.com
 
 [datanodes]
-data.nflabs.com
+frdata.sl.cloud9.ibm.com
+frdata2.sl.cloud9.ibm.com
 
 
 # ELASTICSEARCH
 # =============
-
 [elasticsearch]
 
 # SPARK
 # =====
 [sparkworkers]
-data.nflabs.com
-
+frmaster.sl.cloud9.ibm.com
+frmaster2.sl.cloud9.ibm.com
+frdata.sl.cloud9.ibm.com
+frdata2.sl.cloud9.ibm.com
 
 [sparkmasters]
-master.nflabs.com
-master2.nflabs.com
+frmaster.sl.cloud9.ibm.com
+frmaster2.sl.cloud9.ibm.com
+
+[zeppelin]
+frmaster.sl.cloud9.ibm.com
+frmaster2.sl.cloud9.ibm.com
 
 # Monitoring
 # ==========
 [monitor]
-pel.nflabs.com
+frmaster.sl.cloud9.ibm.com

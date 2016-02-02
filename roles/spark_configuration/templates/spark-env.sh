@@ -1,4 +1,4 @@
-#!/usr/bin/env bash                                                                                                                                                            
+#!/usr/bin/env bash
 
 export DEFAULT_HADOOP_HOME=/usr/lib/hadoop
 
@@ -9,3 +9,4 @@ export SPARK_MASTER_WEBUI_PORT={{ spark.webui }}
 export SPARK_WORKER_MEMORY={{ spark.workermemory }}
 export SPARK_DRIVER_MEMORY={{ spark.drivermemory }}
 export SPARK_DAEMON_MEMORY={{ spark.daemonmemory }}
+export SPARK_PUBLIC_DNS=`hostname`

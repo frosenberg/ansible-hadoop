@@ -11,9 +11,9 @@ IFS=$','
 export ANSIBLE_HOST_KEY_CHECKING=False
 
 if [[ $# -gt 0 ]]; then
-  echo 'Running ansible-playbook -i hosts restart.yml --tags' "$*"
-  ansible-playbook --user=root --ask-pass -i hosts restart.yml --tags "$*"
+	echo 'Running ansible-playbook -i hosts restart.yml --tags' "$*"
+	ansible-playbook --user=root --private-key=$HOME/.ssh/spark_cluster_id_rsa -i hosts restart.yml --tags "$*"
 else
-  echo 'Running ansible-playbook -i hosts restart.yml'
-  ansible-playbook --user=root --ask-pass -i hosts restart.yml
+	echo 'Running ansible-playbook -i hosts restart.yml'
+	ansible-playbook --user=root --private-key=$HOME/.ssh/spark_cluster_id_rsa -i hosts restart.yml
 fi
