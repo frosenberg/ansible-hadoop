@@ -1,0 +1,49 @@
+# Hadoop Nodes
+# ============
+
+[zookeepers]
+frmaster.sl.cloud9.ibm.com zookeeper_id=1
+frmaster2.sl.cloud9.ibm.com zookeeper_id=2
+frdata.sl.cloud9.ibm.com zookeeper_id=3
+frdata2.sl.cloud9.ibm.com zookeeper_id=4
+
+# HADDOP DEPLOYMENT
+# =================
+
+[journalnodes]
+frmaster.sl.cloud9.ibm.com
+frmaster2.sl.cloud9.ibm.com
+
+[namenodes]
+frmaster.sl.cloud9.ibm.com
+frmaster2.sl.cloud9.ibm.com
+
+[datanodes]
+frdata.sl.cloud9.ibm.com
+frdata2.sl.cloud9.ibm.com
+
+
+# ELASTICSEARCH
+# =============
+[elasticsearch]
+
+# SPARK
+# =====
+[sparkworkers]
+frmaster.sl.cloud9.ibm.com
+frmaster2.sl.cloud9.ibm.com
+frdata.sl.cloud9.ibm.com
+frdata2.sl.cloud9.ibm.com
+
+[sparkmasters]
+frmaster.sl.cloud9.ibm.com
+frmaster2.sl.cloud9.ibm.com
+
+[zeppelin]
+frmaster.sl.cloud9.ibm.com
+frmaster2.sl.cloud9.ibm.com
+
+# Monitoring
+# ==========
+[monitor]
+frmaster.sl.cloud9.ibm.com

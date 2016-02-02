@@ -1,0 +1,33 @@
+---
+# file: roles/zeppelin/tasks/main.yml
+
+- name: create zeppelin directory
+  file: path={{ item }} state=directory
+  with_items: zeppelin.location
+  tags:
+    - zeppelin
+
+- name: download Zeppelin
+  get_url: url=http://www.eu.apache.org/dist/incubator/zeppelin/{{ zeppelin.version }}/zeppelin-{{ zeppelin.version }}-bin-all.tgz  dest=/tmp/zeppelin-{{ zeppelin.version }}-bin-all.tgz mode=0644
+  tags:
+    - zeppelin
+
+- name: extract Zeppelin
+  unarchive: src=/tmp/zeppelin-{{ zeppelin.version }}-bin-all.tgz dest={{ zeppelin.location }} copy=no
+  tags:
+    - zeppelin
+
+- name: copy zeppelin-env.sh
+  template: src=zeppelin-env.sh dest={{ zeppelin.location }}/conf/zeppelin-env.sh
+  tags:
+    - zeppelin
+
+- name: copy init file
+  template: src=zeppelin dest=/etc/init.d/zeppelin owner=root group=root mode=755
+  tags:
+    - zeppelin
+
+- name: start zeppelin
+  service: name=zeppelin state=restarted
+  tags:
+    - zeppelin
