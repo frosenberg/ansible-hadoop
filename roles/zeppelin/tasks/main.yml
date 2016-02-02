@@ -12,8 +12,13 @@
   tags:
     - zeppelin
 
-- name: extract Zeppelin
-  unarchive: src=/tmp/zeppelin-{{ zeppelin.version }}-bin-all.tgz dest={{ zeppelin.location }} copy=no
+- name: extract Apache Apache Zeppelin
+  unarchive: src=/tmp/zeppelin-{{ zeppelin.version }}-bin-all.tgz dest=/tmp copy=no
+  tags:
+    - zeppelin
+
+- name: move Apache Zeppelin to target location
+  shell: cp -rf /tmp/zeppelin-{{ zeppelin.version }}-bin-all/* {{ zeppelin.location }}
   tags:
     - zeppelin
 

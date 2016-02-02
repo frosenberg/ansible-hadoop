@@ -72,3 +72,11 @@
       service: name=elasticsearch state=restarted
       tags:
         - elasticsearch
+
+# Restart zeppelin
+- hosts: zeppelin
+  tasks:
+    - name: restart zeppelin
+      service: name=zeppelin state=restarted
+      tags:
+        - zeppelin     
